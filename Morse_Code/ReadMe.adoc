@@ -1,7 +1,7 @@
 ﻿:Author: VivswanShah
 :Email: shahvivswan@gmail.com
 :Date: 05/12/2018
-:Revision: version#
+:Revision: 1
 :License: MIT
 
 = Project: MorseCodeRS
@@ -26,9 +26,10 @@ Upload the code contained in this sketch on to your board
 
 ....
  Morse_Code               => Arduino sketch folder
-  ├── Morse_Code.ino       => main Arduino file
-  ├── schematics.png      => (optional) an image of the required schematics
-  ├── layout.png          => (optional) an image of the layout
+  ├── Morse_Code.ino      => main Arduino file
+  ├── schematics.png      => an image of the schematics
+  ├── layout.png          => an image of the layout
+  ├── fritzing.fzz        => an fritzing of the layout
   └── ReadMe.adoc         => this file
 ....
 
