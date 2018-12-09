@@ -1,0 +1,45 @@
+﻿:Author: VivswanShah
+:Email: shahvivswan@gmail.com
+:Date: 05/12/2018
+:Revision: version#
+:License: MIT
+
+= Project: MorseCodeRS
+
+Morse Code simultanious Receiver and Sender Device.
+
+== Step 1: Installation
+
+1. Open this file
+2. Edit as you like
+3. Release to the World!
+
+== Step 2: Assemble the circuit
+
+Assemble the circuit following the diagram layout.png attached to the sketch
+
+== Step 3: Load the code
+
+Upload the code contained in this sketch on to your board
+
+=== Folder structure
+
+....
+ Morse_Code               => Arduino sketch folder
+  ├── Morse_Code.ino       => main Arduino file
+  ├── schematics.png      => (optional) an image of the required schematics
+  ├── layout.png          => (optional) an image of the layout
+  └── ReadMe.adoc         => this file
+....
+
+=== MIT License
+This project is released under a MIT License.
+
+=== Contributing
+To contribute to this project please contact VivswanShah https://id.arduino.cc/VivswanShah
+
+
+=== Help
+This document is written in the _AsciiDoc_ format, a markup language to describe documents.
+If you need help you can search the http://www.methods.co.nz/asciidoc[AsciiDoc homepage]
+or consult the http://powerman.name/doc/asciidoc[AsciiDoc cheatsheet]
