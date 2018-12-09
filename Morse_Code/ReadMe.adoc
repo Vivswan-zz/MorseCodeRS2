@@ -37,7 +37,7 @@ Upload the code contained in this sketch on to your board
 This project is released under a MIT License.
 
 === Contributing
-To contribute to this project please contact VivswanShah https://id.arduino.cc/VivswanShah
+To contribute to this project please contact VivswanShah https://github.com/Vivswan
 
 
 === Help
