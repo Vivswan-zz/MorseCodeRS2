@@ -9,13 +9,13 @@ project(${PROJECT_NAME})
 
 # Define additional source and header files or default arduino sketch files
 # set(${PROJECT_NAME}_SRCS)
-set(${PROJECT_NAME}_HDRS connection.h)
+set(${PROJECT_NAME}_HDRS src_cpp/connection.h)
 
 ### Additional static libraries to include in the target.
 # set(${PROJECT_NAME}_LIBS)
 
 ### Main sketch file
-set(${PROJECT_NAME}_SKETCH morse_code_rs.ino)
+set(${PROJECT_NAME}_SKETCH src_cpp/morse_code_rs.ino)
 
 ### Add project directories into the build
 # add_subdirectory()

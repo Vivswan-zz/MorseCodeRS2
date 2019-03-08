@@ -57,7 +57,7 @@ include CMakeFiles/MorseCodeRS.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/MorseCodeRS.dir/flags.make
 
-MorseCodeRS_morse_code_rs.ino.cpp: ../morse_code_rs.ino
+MorseCodeRS_morse_code_rs.ino.cpp: ../src_cpp/morse_code_rs.ino
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Regnerating morse_code_rs.ino Sketch"
 	/home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake /home/dekruptos/MyData/MorseCodeRS
 

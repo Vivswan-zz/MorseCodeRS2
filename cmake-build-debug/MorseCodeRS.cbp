@@ -286,7 +286,7 @@
 		<Unit filename="/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/MorseCodeRS_morse_code_rs.ino.cpp.rule">
 			<Option target="MorseCodeRS"/>
 		</Unit>
-		<Unit filename="/home/dekruptos/MyData/MorseCodeRS/morse_code_rs.ino">
+		<Unit filename="/home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_code_rs.ino">
 			<Option target="MorseCodeRS"/>
 		</Unit>
 		<Unit filename="/usr/share/arduino/hardware/arduino/cores/arduino/Arduino.h">
