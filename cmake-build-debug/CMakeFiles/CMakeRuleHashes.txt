@@ -1,0 +1,6 @@
+# Hashes of file build rules.
+7d58d949a94eaa07dcce525d7af99130 CMakeFiles/MorseCodeRS-burn
+9016cf301fbe51424924f8d56ce858ef CMakeFiles/MorseCodeRS-burn-bootloader
+73d200f4c532ade17b324e7429157195 CMakeFiles/MorseCodeRS-size
+f30d62b4b18425f1f84e384ed698777d CMakeFiles/MorseCodeRS-upload
+3e69f79fdd775e943b5333c4f0c31c26 MorseCodeRS_morse_code_rs.ino.cpp

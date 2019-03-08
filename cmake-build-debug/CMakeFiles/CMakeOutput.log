@@ -1,0 +1,324 @@
+The target system is: Arduino -  - 
+The host system is: Linux - 4.18.0-16-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/avr-gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/avr-g++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/3.13.2/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_480c9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_480c9.dir/build.make CMakeFiles/cmTC_480c9.dir/build
+make[1]: Entering directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_480c9.dir/testCCompiler.c.obj
+/usr/bin/avr-gcc   -g -Os -w -ffunction-sections -fdata-sections -MMD    -o CMakeFiles/cmTC_480c9.dir/testCCompiler.c.obj   -c /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_480c9
+/home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_480c9.dir/link.txt --verbose=1
+/usr/bin/avr-gcc -g -Os -w -ffunction-sections -fdata-sections -MMD   -w -Os -Wl,--gc-sections  CMakeFiles/cmTC_480c9.dir/testCCompiler.c.obj  -o cmTC_480c9 
+make[1]: Leaving directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_69759/fast"
+/usr/bin/make -f CMakeFiles/cmTC_69759.dir/build.make CMakeFiles/cmTC_69759.dir/build
+make[1]: Entering directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_69759.dir/CMakeCCompilerABI.c.obj
+/usr/bin/avr-gcc   -g -Os -w -ffunction-sections -fdata-sections -MMD    -o CMakeFiles/cmTC_69759.dir/CMakeCCompilerABI.c.obj   -c /home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/share/cmake-3.13/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_69759
+/home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69759.dir/link.txt --verbose=1
+/usr/bin/avr-gcc -g -Os -w -ffunction-sections -fdata-sections -MMD   -w -Os -Wl,--gc-sections -v CMakeFiles/cmTC_69759.dir/CMakeCCompilerABI.c.obj  -o cmTC_69759 
+Using built-in specs.
+Reading specs from /usr/lib/gcc/avr/5.4.0/device-specs/specs-avr2
+COLLECT_GCC=/usr/bin/avr-gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/avr/5.4.0/lto-wrapper
+Target: avr
+Configured with: ../gcc/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr CFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' CPPFLAGS='-Wdate-time -D_FORTIFY_SOURCE=2' CXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' FCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' FFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' GCJFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' LDFLAGS='-Wl,-Bsymbolic-functions -Wl,-z,relro' OBJCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' OBJCXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat '
+Thread model: single
+gcc version 5.4.0 (GCC) 
+COMPILER_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-g' '-Os' '-w' '-ffunction-sections' '-fdata-sections' '-MMD' '-w' '-Os' '-v' '-o' 'cmTC_69759' '-specs=device-specs/specs-avr2'
+ /usr/lib/gcc/avr/5.4.0/collect2 -plugin /usr/lib/gcc/avr/5.4.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/avr/5.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6zt1k6.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc --pmem-wrap-around=8k -o cmTC_69759 -L/usr/lib/gcc/avr/5.4.0 -L/usr/lib/gcc/avr/5.4.0/../../../avr/lib --gc-sections CMakeFiles/cmTC_69759.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lm -lc --end-group
+make[1]: Leaving directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(avr-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_69759/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_69759.dir/build.make CMakeFiles/cmTC_69759.dir/build]
+  ignore line: [make[1]: Entering directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_69759.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [/usr/bin/avr-gcc   -g -Os -w -ffunction-sections -fdata-sections -MMD    -o CMakeFiles/cmTC_69759.dir/CMakeCCompilerABI.c.obj   -c /home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/share/cmake-3.13/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_69759]
+  ignore line: [/home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69759.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/avr-gcc -g -Os -w -ffunction-sections -fdata-sections -MMD   -w -Os -Wl,--gc-sections -v CMakeFiles/cmTC_69759.dir/CMakeCCompilerABI.c.obj  -o cmTC_69759 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [Reading specs from /usr/lib/gcc/avr/5.4.0/device-specs/specs-avr2]
+  ignore line: [COLLECT_GCC=/usr/bin/avr-gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/avr/5.4.0/lto-wrapper]
+  ignore line: [Target: avr]
+  ignore line: [Configured with: ../gcc/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr CFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' CPPFLAGS='-Wdate-time -D_FORTIFY_SOURCE=2' CXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' FCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' FFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' GCJFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' LDFLAGS='-Wl,-Bsymbolic-functions -Wl,-z,relro' OBJCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' OBJCXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ']
+  ignore line: [Thread model: single]
+  ignore line: [gcc version 5.4.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/../../../avr/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/../../../avr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-g' '-Os' '-w' '-ffunction-sections' '-fdata-sections' '-MMD' '-w' '-Os' '-v' '-o' 'cmTC_69759' '-specs=device-specs/specs-avr2']
+  link line: [ /usr/lib/gcc/avr/5.4.0/collect2 -plugin /usr/lib/gcc/avr/5.4.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/avr/5.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6zt1k6.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc --pmem-wrap-around=8k -o cmTC_69759 -L/usr/lib/gcc/avr/5.4.0 -L/usr/lib/gcc/avr/5.4.0/../../../avr/lib --gc-sections CMakeFiles/cmTC_69759.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lm -lc --end-group]
+    arg [/usr/lib/gcc/avr/5.4.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/avr/5.4.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/avr/5.4.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc6zt1k6.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lm] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [--pmem-wrap-around=8k] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_69759] ==> ignore
+    arg [-L/usr/lib/gcc/avr/5.4.0] ==> dir [/usr/lib/gcc/avr/5.4.0]
+    arg [-L/usr/lib/gcc/avr/5.4.0/../../../avr/lib] ==> dir [/usr/lib/gcc/avr/5.4.0/../../../avr/lib]
+    arg [--gc-sections] ==> ignore
+    arg [CMakeFiles/cmTC_69759.dir/CMakeCCompilerABI.c.obj] ==> ignore
+    arg [--start-group] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lm] ==> lib [m]
+    arg [-lc] ==> lib [c]
+    arg [--end-group] ==> ignore
+  collapse library dir [/usr/lib/gcc/avr/5.4.0] ==> [/usr/lib/gcc/avr/5.4.0]
+  collapse library dir [/usr/lib/gcc/avr/5.4.0/../../../avr/lib] ==> [/usr/lib/avr/lib]
+  implicit libs: [gcc;m;c]
+  implicit dirs: [/usr/lib/gcc/avr/5.4.0;/usr/lib/avr/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d6394/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d6394.dir/build.make CMakeFiles/cmTC_d6394.dir/build
+make[1]: Entering directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d6394.dir/feature_tests.c.obj
+/usr/bin/avr-gcc   -g -Os -w -ffunction-sections -fdata-sections -MMD    -std=c11 -o CMakeFiles/cmTC_d6394.dir/feature_tests.c.obj   -c /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_d6394
+/home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d6394.dir/link.txt --verbose=1
+/usr/bin/avr-gcc -g -Os -w -ffunction-sections -fdata-sections -MMD   -w -Os -Wl,--gc-sections  CMakeFiles/cmTC_d6394.dir/feature_tests.c.obj  -o cmTC_d6394 
+make[1]: Leaving directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_26f11/fast"
+/usr/bin/make -f CMakeFiles/cmTC_26f11.dir/build.make CMakeFiles/cmTC_26f11.dir/build
+make[1]: Entering directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_26f11.dir/feature_tests.c.obj
+/usr/bin/avr-gcc   -g -Os -w -ffunction-sections -fdata-sections -MMD    -std=c99 -o CMakeFiles/cmTC_26f11.dir/feature_tests.c.obj   -c /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_26f11
+/home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_26f11.dir/link.txt --verbose=1
+/usr/bin/avr-gcc -g -Os -w -ffunction-sections -fdata-sections -MMD   -w -Os -Wl,--gc-sections  CMakeFiles/cmTC_26f11.dir/feature_tests.c.obj  -o cmTC_26f11 
+make[1]: Leaving directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b9628/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b9628.dir/build.make CMakeFiles/cmTC_b9628.dir/build
+make[1]: Entering directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b9628.dir/feature_tests.c.obj
+/usr/bin/avr-gcc   -g -Os -w -ffunction-sections -fdata-sections -MMD    -std=c90 -o CMakeFiles/cmTC_b9628.dir/feature_tests.c.obj   -c /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_b9628
+/home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9628.dir/link.txt --verbose=1
+/usr/bin/avr-gcc -g -Os -w -ffunction-sections -fdata-sections -MMD   -w -Os -Wl,--gc-sections  CMakeFiles/cmTC_b9628.dir/feature_tests.c.obj  -o cmTC_b9628 
+make[1]: Leaving directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ed56a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ed56a.dir/build.make CMakeFiles/cmTC_ed56a.dir/build
+make[1]: Entering directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ed56a.dir/testCXXCompiler.cxx.obj
+/usr/bin/avr-g++    -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD    -o CMakeFiles/cmTC_ed56a.dir/testCXXCompiler.cxx.obj -c /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_ed56a
+/home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed56a.dir/link.txt --verbose=1
+/usr/bin/avr-g++  -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD   -w -Os -Wl,--gc-sections  CMakeFiles/cmTC_ed56a.dir/testCXXCompiler.cxx.obj  -o cmTC_ed56a 
+make[1]: Leaving directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f5a6a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f5a6a.dir/build.make CMakeFiles/cmTC_f5a6a.dir/build
+make[1]: Entering directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f5a6a.dir/CMakeCXXCompilerABI.cpp.obj
+/usr/bin/avr-g++    -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD    -o CMakeFiles/cmTC_f5a6a.dir/CMakeCXXCompilerABI.cpp.obj -c /home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/share/cmake-3.13/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_f5a6a
+/home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5a6a.dir/link.txt --verbose=1
+/usr/bin/avr-g++  -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD   -w -Os -Wl,--gc-sections -v CMakeFiles/cmTC_f5a6a.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_f5a6a 
+Using built-in specs.
+Reading specs from /usr/lib/gcc/avr/5.4.0/device-specs/specs-avr2
+COLLECT_GCC=/usr/bin/avr-g++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/avr/5.4.0/lto-wrapper
+Target: avr
+Configured with: ../gcc/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr CFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' CPPFLAGS='-Wdate-time -D_FORTIFY_SOURCE=2' CXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' FCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' FFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' GCJFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' LDFLAGS='-Wl,-Bsymbolic-functions -Wl,-z,relro' OBJCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' OBJCXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat '
+Thread model: single
+gcc version 5.4.0 (GCC) 
+COMPILER_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-g' '-Os' '-w' '-fno-exceptions' '-ffunction-sections' '-fdata-sections' '-fno-threadsafe-statics' '-MMD' '-w' '-Os' '-v' '-o' 'cmTC_f5a6a' '-specs=device-specs/specs-avr2'
+ /usr/lib/gcc/avr/5.4.0/collect2 -plugin /usr/lib/gcc/avr/5.4.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/avr/5.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cct5f1XA.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc --pmem-wrap-around=8k -o cmTC_f5a6a -L/usr/lib/gcc/avr/5.4.0 -L/usr/lib/gcc/avr/5.4.0/../../../avr/lib --gc-sections CMakeFiles/cmTC_f5a6a.dir/CMakeCXXCompilerABI.cpp.obj -lgcc -lm --start-group -lgcc -lm -lc --end-group
+make[1]: Leaving directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(avr-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_f5a6a/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_f5a6a.dir/build.make CMakeFiles/cmTC_f5a6a.dir/build]
+  ignore line: [make[1]: Entering directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_f5a6a.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [/usr/bin/avr-g++    -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD    -o CMakeFiles/cmTC_f5a6a.dir/CMakeCXXCompilerABI.cpp.obj -c /home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/share/cmake-3.13/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_f5a6a]
+  ignore line: [/home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5a6a.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/avr-g++  -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD   -w -Os -Wl,--gc-sections -v CMakeFiles/cmTC_f5a6a.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_f5a6a ]
+  ignore line: [Using built-in specs.]
+  ignore line: [Reading specs from /usr/lib/gcc/avr/5.4.0/device-specs/specs-avr2]
+  ignore line: [COLLECT_GCC=/usr/bin/avr-g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/avr/5.4.0/lto-wrapper]
+  ignore line: [Target: avr]
+  ignore line: [Configured with: ../gcc/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr CFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' CPPFLAGS='-Wdate-time -D_FORTIFY_SOURCE=2' CXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' FCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' FFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' GCJFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' LDFLAGS='-Wl,-Bsymbolic-functions -Wl,-z,relro' OBJCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' OBJCXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ']
+  ignore line: [Thread model: single]
+  ignore line: [gcc version 5.4.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/../../../avr/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/../../../avr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-g' '-Os' '-w' '-fno-exceptions' '-ffunction-sections' '-fdata-sections' '-fno-threadsafe-statics' '-MMD' '-w' '-Os' '-v' '-o' 'cmTC_f5a6a' '-specs=device-specs/specs-avr2']
+  link line: [ /usr/lib/gcc/avr/5.4.0/collect2 -plugin /usr/lib/gcc/avr/5.4.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/avr/5.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cct5f1XA.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc --pmem-wrap-around=8k -o cmTC_f5a6a -L/usr/lib/gcc/avr/5.4.0 -L/usr/lib/gcc/avr/5.4.0/../../../avr/lib --gc-sections CMakeFiles/cmTC_f5a6a.dir/CMakeCXXCompilerABI.cpp.obj -lgcc -lm --start-group -lgcc -lm -lc --end-group]
+    arg [/usr/lib/gcc/avr/5.4.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/avr/5.4.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/avr/5.4.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cct5f1XA.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lm] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [--pmem-wrap-around=8k] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_f5a6a] ==> ignore
+    arg [-L/usr/lib/gcc/avr/5.4.0] ==> dir [/usr/lib/gcc/avr/5.4.0]
+    arg [-L/usr/lib/gcc/avr/5.4.0/../../../avr/lib] ==> dir [/usr/lib/gcc/avr/5.4.0/../../../avr/lib]
+    arg [--gc-sections] ==> ignore
+    arg [CMakeFiles/cmTC_f5a6a.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lm] ==> lib [m]
+    arg [--start-group] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lm] ==> lib [m]
+    arg [-lc] ==> lib [c]
+    arg [--end-group] ==> ignore
+  collapse library dir [/usr/lib/gcc/avr/5.4.0] ==> [/usr/lib/gcc/avr/5.4.0]
+  collapse library dir [/usr/lib/gcc/avr/5.4.0/../../../avr/lib] ==> [/usr/lib/avr/lib]
+  implicit libs: [gcc;m;gcc;m;c]
+  implicit dirs: [/usr/lib/gcc/avr/5.4.0;/usr/lib/avr/lib]
+  implicit fwks: []
+
+
+
+
+Detecting CXX [-std=c++1z] compiler features compiled with the following output:
+Change Dir: /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9f380/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9f380.dir/build.make CMakeFiles/cmTC_9f380.dir/build
+make[1]: Entering directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9f380.dir/feature_tests.cxx.obj
+/usr/bin/avr-g++    -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD    -std=c++1z -o CMakeFiles/cmTC_9f380.dir/feature_tests.cxx.obj -c /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_9f380
+/home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9f380.dir/link.txt --verbose=1
+/usr/bin/avr-g++  -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD   -w -Os -Wl,--gc-sections  CMakeFiles/cmTC_9f380.dir/feature_tests.cxx.obj  -o cmTC_9f380 
+make[1]: Leaving directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+
+Detecting CXX [-std=c++14] compiler features compiled with the following output:
+Change Dir: /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_aac21/fast"
+/usr/bin/make -f CMakeFiles/cmTC_aac21.dir/build.make CMakeFiles/cmTC_aac21.dir/build
+make[1]: Entering directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_aac21.dir/feature_tests.cxx.obj
+/usr/bin/avr-g++    -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD    -std=c++14 -o CMakeFiles/cmTC_aac21.dir/feature_tests.cxx.obj -c /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_aac21
+/home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aac21.dir/link.txt --verbose=1
+/usr/bin/avr-g++  -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD   -w -Os -Wl,--gc-sections  CMakeFiles/cmTC_aac21.dir/feature_tests.cxx.obj  -o cmTC_aac21 
+make[1]: Leaving directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+
+Detecting CXX [-std=c++11] compiler features compiled with the following output:
+Change Dir: /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8bb29/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8bb29.dir/build.make CMakeFiles/cmTC_8bb29.dir/build
+make[1]: Entering directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_8bb29.dir/feature_tests.cxx.obj
+/usr/bin/avr-g++    -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD    -std=c++11 -o CMakeFiles/cmTC_8bb29.dir/feature_tests.cxx.obj -c /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_8bb29
+/home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8bb29.dir/link.txt --verbose=1
+/usr/bin/avr-g++  -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD   -w -Os -Wl,--gc-sections  CMakeFiles/cmTC_8bb29.dir/feature_tests.cxx.obj  -o cmTC_8bb29 
+make[1]: Leaving directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+
+Detecting CXX [-std=c++98] compiler features compiled with the following output:
+Change Dir: /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a9d70/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a9d70.dir/build.make CMakeFiles/cmTC_a9d70.dir/build
+make[1]: Entering directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a9d70.dir/feature_tests.cxx.obj
+/usr/bin/avr-g++    -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD    -std=c++98 -o CMakeFiles/cmTC_a9d70.dir/feature_tests.cxx.obj -c /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_a9d70
+/home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a9d70.dir/link.txt --verbose=1
+/usr/bin/avr-g++  -g -Os -w -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -MMD   -w -Os -Wl,--gc-sections  CMakeFiles/cmTC_a9d70.dir/feature_tests.cxx.obj  -o cmTC_a9d70 
+make[1]: Leaving directory '/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+

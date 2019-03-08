@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/MorseCodeRS_morse_code_rs.ino.cpp
+SoftwareSerial.h
+-
+LiquidCrystal.h
+-
+avr/pgmspace.h
+-
+connection.h
+/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/connection.h
+morse_lcd.h
+/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/morse_lcd.h
+Arduino.h
+/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/Arduino.h
+
+/usr/share/arduino/libraries/LiquidCrystal/LiquidCrystal.h
+inttypes.h
+-
+Print.h
+/usr/share/arduino/libraries/LiquidCrystal/Print.h
+
+/usr/share/arduino/libraries/SoftwareSerial/SoftwareSerial.h
+inttypes.h
+-
+Stream.h
+-
+
