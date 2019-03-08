@@ -1,19 +1,4 @@
 /home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/dekruptos/MyData/MorseCodeRS
--- The C compiler identification is GNU 5.4.0
--- The CXX compiler identification is GNU 5.4.0
--- Arduino SDK version 1.0.5: /usr/share/arduino
--- Check for working C compiler: /usr/bin/avr-gcc
--- Check for working C compiler: /usr/bin/avr-gcc -- works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
--- Check for working CXX compiler: /usr/bin/avr-g++
--- Check for working CXX compiler: /usr/bin/avr-g++ -- works
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Detecting CXX compile features
--- Detecting CXX compile features - done
 -- Generating MorseCodeRS
 -- Generating uno_SoftwareSerial for library SoftwareSerial
 -- Generating uno_LiquidCrystal for library LiquidCrystal
