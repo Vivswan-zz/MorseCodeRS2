@@ -10,6 +10,7 @@ project(${PROJECT_NAME})
 # Define additional source and header files or default arduino sketch files
 # set(${PROJECT_NAME}_SRCS)
 set(${PROJECT_NAME}_HDRS src_cpp/connection.h)
+set(${PROJECT_NAME}_HDRS src_cpp/morse_lcd.h)
 
 ### Additional static libraries to include in the target.
 # set(${PROJECT_NAME}_LIBS)

@@ -1,7 +1,11 @@
-HardwareSerial.o: /usr/share/arduino/hardware/arduino/cores/arduino/new.h \
+HardwareSerial.o: \
+  /usr/share/arduino/hardware/arduino/cores/arduino/wiring_private.h \
+  /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h \
+  /usr/share/arduino/hardware/arduino/cores/arduino/new.h \
   /usr/share/arduino/hardware/arduino/cores/arduino/Printable.h \
   /usr/share/arduino/hardware/arduino/cores/arduino/Print.h \
   /usr/share/arduino/hardware/arduino/cores/arduino/Stream.h \
+  /usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.h \
   /usr/share/arduino/hardware/arduino/cores/arduino/WString.h \
   /usr/lib/avr/include/ctype.h \
   /usr/share/arduino/hardware/arduino/cores/arduino/WCharacter.h \
@@ -17,6 +21,5 @@ HardwareSerial.o: /usr/share/arduino/hardware/arduino/cores/arduino/new.h \
   /usr/lib/avr/include/stdint.h /usr/lib/gcc/avr/5.4.0/include/stdint.h \
   /usr/lib/avr/include/inttypes.h /usr/lib/avr/include/stdio.h \
   /usr/lib/avr/include/stdlib.h \
-  /clion_clangd_inmemory_directory/macros/usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.h \
-  /usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp \
-  /usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.h
+  /clion_clangd_inmemory_directory/macros/usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp \
+  /usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.cpp

@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/MorseCodeRS_morse_code_rs.ino.cpp
+Arduino.h
+-
 SoftwareSerial.h
 -
 LiquidCrystal.h

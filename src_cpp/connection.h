@@ -10,8 +10,8 @@
 
 class Connection {
     private:
-//        const char id = mfrc522.uid.uidByte;
         SoftwareSerial HC12;
+        const char id = 'a';
         bool handshakeSuccess = false;
 
         void handshake() {
@@ -27,6 +27,10 @@ class Connection {
             handshake();
         }
 
+        void loop() {
+
+        }
+
         void write (char * x){
             Serial.write(x);
             HC12.write(x);
@@ -39,6 +43,7 @@ class Connection {
             if (HC12.available()){
                 return HC12.read();
             }
+            return -1;
         }
 
 };

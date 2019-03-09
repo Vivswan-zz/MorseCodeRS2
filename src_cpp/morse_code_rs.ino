@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include <SoftwareSerial.h>
 #include <LiquidCrystal.h>
 #include <avr/pgmspace.h>
@@ -80,7 +81,8 @@ const String MORSE_CODE[][2]= {
 
 
 Connection connection(SoftwareSerial(HC_RX, HC_TX));
-LiquidCrystal LCD(RS, EN, D4, D5, D6, D7);
+MorseLCD morseLCD(LiquidCrystal(RS, EN, D4, D5, D6, D7));
+//LiquidCrystal LCD(RS, EN, D4, D5, D6, D7);
 
 String morseCode = "";
 String morseString = "";
@@ -92,16 +94,6 @@ boolean buzzerBeap = false;
 
 boolean ledOnReceive = true;
 boolean buzzerOnReceive = true;
-
-void LCDLast (const String &s, uint8_t i) {
-    LCD.setCursor(2, i);
-    if (s.length() > 14) {
-        LCD.print(String(s.substring(s.length() - 14, s.length())));
-    } else {
-        LCD.print(s);
-        LCD.print("              ");
-    }
-}
 
 String singleMorseToText (String m) {
     for (const auto &i : MORSE_CODE) {
@@ -194,7 +186,6 @@ void addToBuzzer(String text) {
 }
 
 void send(char x) {
-    received(x);
 //    static unsigned long start = millis();
 //    boolean confirmation = false;
 //
@@ -209,8 +200,7 @@ void send(char x) {
 //        char incomingByte = HC12.read();
 //        delay(5);
 //        if(!confirmation && incomingByte == '&') {
-//            LCD.setCursor(0, 0);
-//            LCD.print("S");
+//            morseLCD.changeSYM('S');
 //            confirmation = true;
 //        } else {
 //            received(incomingByte);
@@ -219,8 +209,7 @@ void send(char x) {
 //            start = millis();
 //            confirmation = true;
 //            morseString = morseString.substring(0, morseString.length() - 1);
-//            LCD.setCursor(0, 0);
-//            LCD.print("X");
+//            morseLCD.changeSYM('X');
 //        }
 //        if (millis() - start > DOT_INTERVAL && !confirmation) {
 //            HC12.print(String(x));
@@ -284,8 +273,6 @@ void loopSettingButton () {
     static boolean lastButtonState = LOW;
     boolean buttonState = digitalRead(SETTING_PIN);
 
-    Serial.write(buttonState ? "1\n" : "0\n");
-
     if (buttonState != lastButtonState) {
         if (buttonState == LOW) {
             if (ledOnReceive && buzzerOnReceive) {
@@ -337,10 +324,12 @@ void loopMorseKey () {
         }
     }
 }
+
 void loopLCD () {
-    LCDLast(morseString + morseCode, 0);
-    LCDLast(receiveString, 1);
+    morseLCD.write(morseString + morseCode);
+    morseLCD.write(receiveString, false);
 }
+
 void loopBuzzer() {
     addToBuzzer("");
     if (buzzerBeap) {
@@ -362,13 +351,7 @@ void setup() {
     pinMode(BUZZER_PIN, OUTPUT);
 
     connection.begin();
-
-    LCD.begin(16, 2);
-    LCD.clear();
-    LCD.setCursor(0, 0);
-    LCD.print("S:");
-    LCD.setCursor(0, 1);
-    LCD.print("R:");
+    morseLCD.begin();
 }
 
 void setting() {
@@ -381,8 +364,8 @@ void setting() {
 }
 
 void loop() {
+    connection.loop();
     setting();
-    connection.write("w\n");
 
     loopEditButton();
     loopSettingButton();
