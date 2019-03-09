@@ -13,12 +13,12 @@ SoftwareSerial.h
 -
 LiquidCrystal.h
 -
-avr/pgmspace.h
--
 connection.h
 /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/connection.h
 morse_lcd.h
 /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/morse_lcd.h
+morse_code.h
+/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/morse_code.h
 Arduino.h
 /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/Arduino.h
 

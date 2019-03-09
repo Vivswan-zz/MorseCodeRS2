@@ -9,8 +9,7 @@ project(${PROJECT_NAME})
 
 # Define additional source and header files or default arduino sketch files
 # set(${PROJECT_NAME}_SRCS)
-set(${PROJECT_NAME}_HDRS src_cpp/connection.h)
-set(${PROJECT_NAME}_HDRS src_cpp/morse_lcd.h)
+set(${PROJECT_NAME}_HDRS src_cpp/*.h)
 
 ### Additional static libraries to include in the target.
 # set(${PROJECT_NAME}_LIBS)
@@ -30,11 +29,11 @@ set(${PROJECT_NAME}_SKETCH src_cpp/morse_code_rs.ino)
 # set(_RECURSE true)
 
 #### Additional settings for programmer. From programmers.txt
-set(${PROJECT_NAME}_PROGRAMMER avrispmkii)
+# set(${PROJECT_NAME}_PROGRAMMER avrispmkii)
 set(${PROJECT_NAME}_PORT /dev/ttyACM0)
 # set(uno.upload.speed 9600)
 
 ## Verbose build process
-# set(${PROJECT_NAME}_AFLAGS -v)
+set(${PROJECT_NAME}_AFLAGS -v)
 
 generate_arduino_firmware(${PROJECT_NAME})

@@ -124,19 +124,6 @@ upload/fast:
 .PHONY : upload/fast
 
 #=============================================================================
-# Target rules for targets named MorseCodeRS-burn-bootloader
-
-# Build rule for target.
-MorseCodeRS-burn-bootloader: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MorseCodeRS-burn-bootloader
-.PHONY : MorseCodeRS-burn-bootloader
-
-# fast build rule for target.
-MorseCodeRS-burn-bootloader/fast:
-	$(MAKE) -f CMakeFiles/MorseCodeRS-burn-bootloader.dir/build.make CMakeFiles/MorseCodeRS-burn-bootloader.dir/build
-.PHONY : MorseCodeRS-burn-bootloader/fast
-
-#=============================================================================
 # Target rules for targets named uno_CORE
 
 # Build rule for target.
@@ -161,19 +148,6 @@ uno_LiquidCrystal: cmake_check_build_system
 uno_LiquidCrystal/fast:
 	$(MAKE) -f CMakeFiles/uno_LiquidCrystal.dir/build.make CMakeFiles/uno_LiquidCrystal.dir/build
 .PHONY : uno_LiquidCrystal/fast
-
-#=============================================================================
-# Target rules for targets named MorseCodeRS-burn
-
-# Build rule for target.
-MorseCodeRS-burn: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MorseCodeRS-burn
-.PHONY : MorseCodeRS-burn
-
-# fast build rule for target.
-MorseCodeRS-burn/fast:
-	$(MAKE) -f CMakeFiles/MorseCodeRS-burn.dir/build.make CMakeFiles/MorseCodeRS-burn.dir/build
-.PHONY : MorseCodeRS-burn/fast
 
 #=============================================================================
 # Target rules for targets named MorseCodeRS
@@ -857,10 +831,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... upload"
-	@echo "... MorseCodeRS-burn-bootloader"
 	@echo "... uno_CORE"
 	@echo "... uno_LiquidCrystal"
-	@echo "... MorseCodeRS-burn"
 	@echo "... MorseCodeRS"
 	@echo "... MorseCodeRS-size"
 	@echo "... uno_SoftwareSerial"

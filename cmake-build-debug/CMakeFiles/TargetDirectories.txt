@@ -1,10 +1,8 @@
 /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/upload.dir
-/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/MorseCodeRS-burn-bootloader.dir
 /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/uno_CORE.dir
 /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/uno_LiquidCrystal.dir
-/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/MorseCodeRS-burn.dir
 /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/MorseCodeRS.dir
 /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/MorseCodeRS-size.dir
 /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles/uno_SoftwareSerial.dir

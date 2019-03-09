@@ -3,9 +3,9 @@
 #include <Arduino.h>
 #include <SoftwareSerial.h>
 #include <LiquidCrystal.h>
-#include <avr/pgmspace.h>
 #include "connection.h"
 #include "morse_lcd.h"
+#include "morse_code.h"
 
 #define DOT_INTERVAL    150
 #define BUZZER_FREQ     700
@@ -40,16 +40,10 @@
 #include "Arduino.h"
 
 //=== START Forward: /home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_code_rs.ino
- String singleMorseToText (String m) ;
- String singleMorseToText (String m) ;
- String textToMorse (String t) ;
- String textToMorse (String t) ;
  String morseToSound (String m) ;
  String morseToSound (String m) ;
- String textToSound (String t) ;
- String textToSound (String t) ;
- boolean isValidLetter (char x) ;
- boolean isValidLetter (char x) ;
+ String textToSound (const String &t) ;
+ String textToSound (const String &t) ;
  void addToBuzzer(String text) ;
  void addToBuzzer(String text) ;
  void send(char x) ;
@@ -78,55 +72,8 @@
 #line 35 "/home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_code_rs.ino"
 
 
-const String MORSE_CODE[][2]= {
-        {"A", "*-"},
-        {"B", "-***"},
-        {"C", "-*-*"},
-        {"D", "-**"},
-        {"E", "*"},
-        {"F", "**-*"},
-        {"G", "--*"},
-        {"H", "****"},
-        {"I", "**"},
-        {"J", "*---"},
-        {"K", "-*-"},
-        {"L", "*-**"},
-        {"M", "--"},
-        {"N", "-*"},
-        {"O", "---"},
-        {"P", "*--*"},
-        {"Q", "--*-"},
-        {"R", "*-*"},
-        {"S", "***"},
-        {"T", "-"},
-        {"U", "**-"},
-        {"V", "***-"},
-        {"W", "*--"},
-        {"X", "-**-"},
-        {"Y", "-*--"},
-        {"Z", "--**"},
-        {"0", "-----"},
-        {"1", "*----"},
-        {"2", "**---"},
-        {"3", "***--"},
-        {"4", "****-"},
-        {"5", "*****"},
-        {"6", "-****"},
-        {"7", "--***"},
-        {"8", "---**"},
-        {"9", "----*"},
-        {".", "*-*-*-"},
-        {",", "--**--"},
-        {"?", "**--**"},
-        {"'", "*----*"},
-        {"!", "-*-*--"},
-};
-#define MORSE_CODE_LENGTH  41
-
-
 Connection connection(SoftwareSerial(HC_RX, HC_TX));
 MorseLCD morseLCD(LiquidCrystal(RS, EN, D4, D5, D6, D7));
-//LiquidCrystal LCD(RS, EN, D4, D5, D6, D7);
 
 String morseCode = "";
 String morseString = "";
@@ -139,33 +86,6 @@ boolean buzzerBeap = false;
 boolean ledOnReceive = true;
 boolean buzzerOnReceive = true;
 
-String singleMorseToText (String m) {
-    for (const auto &i : MORSE_CODE) {
-        if(i[1] == m) {
-            return i[0];
-        }
-    }
-    return "";
-}
-String textToMorse (String t) {
-    String r = "";
-
-    for (int i = 0; i < t.length(); i++) {
-        if (t[i] == ' ') {
-            r += " ";
-            continue;
-        }
-        for (const auto &j : MORSE_CODE) {
-            if(j[0] == String(t[i])) {
-                r += j[1];
-                r += " ";
-                break;
-            }
-        }
-    }
-
-    return r;
-}
 String morseToSound (String m) {
     String r = "";
 
@@ -181,17 +101,8 @@ String morseToSound (String m) {
 
     return r;
 }
-String textToSound (String t) {
+String textToSound (const String &t) {
     return morseToSound(textToMorse(t));
-}
-
-boolean isValidLetter (char x) {
-    for (const auto &i : MORSE_CODE) {
-        if (x == i[0][0]) {
-            return true;
-        }
-    }
-    return false;
 }
 
 void addToBuzzer(String text) {
@@ -199,7 +110,7 @@ void addToBuzzer(String text) {
     static String toBeap = "";
     static unsigned long start = millis();
 
-    if (text.length() > 0) {
+    if (text != nullptr && text.length() > 0) {
         text.toUpperCase();
         toProcess += text;
     }
@@ -245,8 +156,7 @@ void send(char x) {
 //        char incomingByte = HC12.read();
 //        delay(5);
 //        if(!confirmation && incomingByte == '&') {
-//            LCD.setCursor(0, 0);
-//            LCD.print("S");
+//            morseLCD.changeSYM('S');
 //            confirmation = true;
 //        } else {
 //            received(incomingByte);
@@ -255,8 +165,7 @@ void send(char x) {
 //            start = millis();
 //            confirmation = true;
 //            morseString = morseString.substring(0, morseString.length() - 1);
-//            LCD.setCursor(0, 0);
-//            LCD.print("X");
+//            morseLCD.changeSYM('X');
 //        }
 //        if (millis() - start > DOT_INTERVAL && !confirmation) {
 //            HC12.print(String(x));
@@ -283,7 +192,7 @@ void loopEditButton () {
     static unsigned long start = millis();
     static unsigned int count = 0;
     static boolean lastButtonState = LOW;
-    boolean buttonState = digitalRead(EDIT_PIN);
+    auto buttonState = static_cast<boolean>(digitalRead(EDIT_PIN));
 
     if (buttonState != lastButtonState) {
         start = millis();
@@ -318,7 +227,7 @@ void loopEditButton () {
 }
 void loopSettingButton () {
     static boolean lastButtonState = LOW;
-    boolean buttonState = digitalRead(SETTING_PIN);
+    auto buttonState = static_cast<boolean>(digitalRead(SETTING_PIN));
 
     if (buttonState != lastButtonState) {
         if (buttonState == LOW) {
@@ -339,8 +248,8 @@ void loopSettingButton () {
 void loopMorseKey () {
     static unsigned long start = millis();
     static boolean lastButtonState = LOW;
-    boolean buttonState = digitalRead(MORSE_KEY_PIN);
-    unsigned int timeInterval = millis() - start;
+    auto buttonState = static_cast<boolean>(digitalRead(MORSE_KEY_PIN));
+    unsigned long timeInterval = millis() - start;
 
     if (lastButtonState != buttonState) {
         noAddSpace = false;
@@ -360,8 +269,7 @@ void loopMorseKey () {
 
     if(buttonState == LOW){
         if(morseCode.length() > 0 && timeInterval > DASH_INTERVAL && timeInterval < WORD_INTERVAL) {
-            morseString += singleMorseToText(morseCode);
-            morseCode = "";
+            morseCode = morseToChar(morseCode);
             send(morseString[morseString.length() - 1]);
         } else if (morseString.length() > 0 && morseString[morseString.length() - 1] != ' ' && (!noAddSpace)
                    && timeInterval > WORD_INTERVAL && timeInterval < WORD_INTERVAL + DOT_INTERVAL) {
@@ -378,7 +286,7 @@ void loopLCD () {
 }
 
 void loopBuzzer() {
-    addToBuzzer("");
+    addToBuzzer(nullptr);
     if (buzzerBeap) {
         tone(BUZZER_PIN, BUZZER_FREQ);
     } else {
@@ -399,6 +307,10 @@ void setup() {
 
     connection.begin();
     morseLCD.begin();
+    Serial.print(textToMorse("Vivswan Shah."));
+    Serial.write('\n');
+    Serial.print(morseToChar("*"));
+    Serial.write('\n');
 }
 
 void setting() {
@@ -413,6 +325,7 @@ void setting() {
 void loop() {
     connection.loop();
     setting();
+
 
     loopEditButton();
     loopSettingButton();

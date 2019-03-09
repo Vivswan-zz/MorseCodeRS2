@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug
 include CMakeFiles/MorseCodeRS-burn.dir/progress.make
 
 CMakeFiles/MorseCodeRS-burn: MorseCodeRS.elf
-	/usr/share/arduino/hardware/tools/avrdude -C/usr/share/arduino/hardware/tools/avrdude.conf -cstk500v2 -Pusb -patmega328p -V -Uflash:w:/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/MorseCodeRS.hex
+	/usr/share/arduino/hardware/tools/avrdude -C/usr/share/arduino/hardware/tools/avrdude.conf -cstk500v2 -Pusb -patmega328p -v -Uflash:w:/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/MorseCodeRS.hex
 
 MorseCodeRS-burn: CMakeFiles/MorseCodeRS-burn
 MorseCodeRS-burn: CMakeFiles/MorseCodeRS-burn.dir/build.make

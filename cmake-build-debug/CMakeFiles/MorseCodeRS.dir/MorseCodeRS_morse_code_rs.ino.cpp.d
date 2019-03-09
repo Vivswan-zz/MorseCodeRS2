@@ -16,4 +16,5 @@ CMakeFiles/MorseCodeRS.dir/MorseCodeRS_morse_code_rs.ino.cpp.obj: \
  /usr/share/arduino/hardware/arduino/cores/arduino/Print.h \
  /home/dekruptos/MyData/MorseCodeRS/src_cpp/connection.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/HardwareSerial.h \
- /home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_lcd.h
+ /home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_lcd.h \
+ /home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_code.h

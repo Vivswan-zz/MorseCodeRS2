@@ -97,38 +97,6 @@ clean: CMakeFiles/upload.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/MorseCodeRS-burn-bootloader.dir
-
-# All Build rule for target.
-CMakeFiles/MorseCodeRS-burn-bootloader.dir/all: CMakeFiles/MorseCodeRS.dir/all
-	$(MAKE) -f CMakeFiles/MorseCodeRS-burn-bootloader.dir/build.make CMakeFiles/MorseCodeRS-burn-bootloader.dir/depend
-	$(MAKE) -f CMakeFiles/MorseCodeRS-burn-bootloader.dir/build.make CMakeFiles/MorseCodeRS-burn-bootloader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles --progress-num= "Built target MorseCodeRS-burn-bootloader"
-.PHONY : CMakeFiles/MorseCodeRS-burn-bootloader.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/MorseCodeRS-burn-bootloader.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles 28
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MorseCodeRS-burn-bootloader.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/MorseCodeRS-burn-bootloader.dir/rule
-
-# Convenience name for target.
-MorseCodeRS-burn-bootloader: CMakeFiles/MorseCodeRS-burn-bootloader.dir/rule
-
-.PHONY : MorseCodeRS-burn-bootloader
-
-# clean rule for target.
-CMakeFiles/MorseCodeRS-burn-bootloader.dir/clean:
-	$(MAKE) -f CMakeFiles/MorseCodeRS-burn-bootloader.dir/build.make CMakeFiles/MorseCodeRS-burn-bootloader.dir/clean
-.PHONY : CMakeFiles/MorseCodeRS-burn-bootloader.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/MorseCodeRS-burn-bootloader.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/uno_CORE.dir
 
 # All Build rule for target.
@@ -199,38 +167,6 @@ CMakeFiles/uno_LiquidCrystal.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/uno_LiquidCrystal.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/MorseCodeRS-burn.dir
-
-# All Build rule for target.
-CMakeFiles/MorseCodeRS-burn.dir/all: CMakeFiles/MorseCodeRS.dir/all
-	$(MAKE) -f CMakeFiles/MorseCodeRS-burn.dir/build.make CMakeFiles/MorseCodeRS-burn.dir/depend
-	$(MAKE) -f CMakeFiles/MorseCodeRS-burn.dir/build.make CMakeFiles/MorseCodeRS-burn.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles --progress-num= "Built target MorseCodeRS-burn"
-.PHONY : CMakeFiles/MorseCodeRS-burn.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/MorseCodeRS-burn.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles 28
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MorseCodeRS-burn.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/MorseCodeRS-burn.dir/rule
-
-# Convenience name for target.
-MorseCodeRS-burn: CMakeFiles/MorseCodeRS-burn.dir/rule
-
-.PHONY : MorseCodeRS-burn
-
-# clean rule for target.
-CMakeFiles/MorseCodeRS-burn.dir/clean:
-	$(MAKE) -f CMakeFiles/MorseCodeRS-burn.dir/build.make CMakeFiles/MorseCodeRS-burn.dir/clean
-.PHONY : CMakeFiles/MorseCodeRS-burn.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/MorseCodeRS-burn.dir/clean
 
 .PHONY : clean
 

@@ -1,6 +1,7 @@
 /home/dekruptos/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/dekruptos/MyData/MorseCodeRS
 -- Generating MorseCodeRS
 -- Generating uno_SoftwareSerial for library SoftwareSerial
+-- Generating uno_LiquidCrystal for library LiquidCrystal
 -- Using /usr/bin/avr-objcopy for converting firmware image to hex
 -- Configuring done
 -- Generating done

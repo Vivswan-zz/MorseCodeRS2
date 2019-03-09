@@ -46,10 +46,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/upload.dir/DependInfo.cmake"
-  "CMakeFiles/MorseCodeRS-burn-bootloader.dir/DependInfo.cmake"
   "CMakeFiles/uno_CORE.dir/DependInfo.cmake"
   "CMakeFiles/uno_LiquidCrystal.dir/DependInfo.cmake"
-  "CMakeFiles/MorseCodeRS-burn.dir/DependInfo.cmake"
   "CMakeFiles/MorseCodeRS.dir/DependInfo.cmake"
   "CMakeFiles/MorseCodeRS-size.dir/DependInfo.cmake"
   "CMakeFiles/uno_SoftwareSerial.dir/DependInfo.cmake"

@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug
 include CMakeFiles/MorseCodeRS-burn-bootloader.dir/progress.make
 
 CMakeFiles/MorseCodeRS-burn-bootloader: MorseCodeRS.elf
-	cd /usr/share/arduino/hardware/arduino/bootloaders/optiboot && /usr/share/arduino/hardware/tools/avrdude -C/usr/share/arduino/hardware/tools/avrdude.conf -cstk500v2 -Pusb -patmega328p -V -e -Ulock:w:0xff:m -Uefuse:w:0xfd:m -Uhfuse:w:0xde:m -Ulfuse:w:0xff:m -Uflash:w:optiboot_atmega328.hex:i -Ulock:w:0xcf:m
+	cd /usr/share/arduino/hardware/arduino/bootloaders/optiboot && /usr/share/arduino/hardware/tools/avrdude -C/usr/share/arduino/hardware/tools/avrdude.conf -cstk500v2 -Pusb -patmega328p -v -e -Ulock:w:0xff:m -Uefuse:w:0xfd:m -Uhfuse:w:0xde:m -Ulfuse:w:0xff:m -Uflash:w:optiboot_atmega328.hex:i -Ulock:w:0xcf:m
 
 MorseCodeRS-burn-bootloader: CMakeFiles/MorseCodeRS-burn-bootloader
 MorseCodeRS-burn-bootloader: CMakeFiles/MorseCodeRS-burn-bootloader.dir/build.make
