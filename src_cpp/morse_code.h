@@ -93,7 +93,7 @@ const PROGMEM char * const morse_arr[] = {
 };
 
 
-boolean isValidLetter (char x) {
+boolean isValidMorseLetter(char x) {
     for (int i = 0; i < strlen_P(chars); ++i) {
         if (x == pgm_read_byte_near(chars + i)){
             return true;

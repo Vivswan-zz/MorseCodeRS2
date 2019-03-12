@@ -3,24 +3,24 @@
 #include <Arduino.h>
 #include <SoftwareSerial.h>
 #include <LiquidCrystal.h>
-#include "connection.h"
-#include "morse_lcd.h"
-#include "morse_code.h"
+
+
 
 #define DOT_INTERVAL    150
 #define BUZZER_FREQ     700
-#define MORSE_READ_RATE 2
+#define BUZZER_INTERVAL 300
 
-//Visuals
+
+//Visuals Pins
 #define LED_PIN         2
 #define BUZZER_PIN      6
 
-//Button
+//Button Pins
 #define MORSE_KEY_PIN   4
 #define EDIT_PIN        13
 #define SETTING_PIN     SCL
 
-// LCD
+// LCD Pins
 #define RS              3
 #define EN              5
 #define D4              7
@@ -28,7 +28,7 @@
 #define D6              9
 #define D7              12
 
-// HC-12
+// HC-12 Pins
 #define HC_TX           10
 #define HC_RX           11
 
@@ -36,112 +36,61 @@
 #define DASH_INTERVAL   DOT_INTERVAL * 3
 #define WORD_INTERVAL   DOT_INTERVAL * 7
 
-#line 39 "/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/MorseCodeRS_morse_code_rs.ino.cpp"
+#include "connection.h"
+#include "morse_lcd.h"
+#include "morse_code.h"
+#include "button.h"
+#include "morse_buzzer_and_led.h"
+
+#line 45 "/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/MorseCodeRS_morse_code_rs.ino.cpp"
 #include "Arduino.h"
 
 //=== START Forward: /home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_code_rs.ino
- String morseToSound (String m) ;
- String morseToSound (String m) ;
- String textToSound (const String &t) ;
- String textToSound (const String &t) ;
- void addToBuzzer(String text) ;
- void addToBuzzer(String text) ;
  void send(char x) ;
  void send(char x) ;
  void received (char x) ;
  void received (char x) ;
- void loopEditButton () ;
- void loopEditButton () ;
- void loopSettingButton () ;
- void loopSettingButton () ;
+ void onEditButtonClick();
+ void onEditButtonClick();
+ void onEditButtonMultiClick (const int count) ;
+ void onEditButtonMultiClick (const int count) ;
+ void onSettingButtonClick () ;
+ void onSettingButtonClick () ;
  void loopMorseKey () ;
  void loopMorseKey () ;
  void loopLCD () ;
  void loopLCD () ;
- void loopBuzzer() ;
- void loopBuzzer() ;
- void loopHC12 () ;
- void loopHC12 () ;
- void setup() ;
- void setup() ;
  void setting() ;
  void setting() ;
+ void setup() ;
+ void setup() ;
  void loop() ;
  void loop() ;
 //=== END Forward: /home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_code_rs.ino
-#line 35 "/home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_code_rs.ino"
+#line 41 "/home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_code_rs.ino"
 
 
 Connection connection(SoftwareSerial(HC_RX, HC_TX));
 MorseLCD morseLCD(LiquidCrystal(RS, EN, D4, D5, D6, D7));
 
+ArduinoButton morseKeyButton(MORSE_KEY_PIN);
+ArduinoButton editButton(EDIT_PIN);
+ArduinoButton settingButton(SETTING_PIN);
+
+BuzzerLED buzzerLed;
+
 String morseCode = "";
 String morseString = "";
 String receiveString = "";
 
-boolean lastSpace = false;
-boolean noAddSpace = false;
-boolean buzzerBeap = false;
+bool lastSpace = false;
+bool noAddSpace = false;
 
-boolean ledOnReceive = true;
-boolean buzzerOnReceive = true;
-
-String morseToSound (String m) {
-    String r = "";
-
-    for (int i = 0; i < m.length(); i++) {
-        if(m[i] == '*') {
-            r += "b ";
-        } else if (m[i] == '-') {
-            r += "bbb ";
-        } else if (m[i] == ' ') {
-            r += "  ";
-        }
-    }
-
-    return r;
-}
-String textToSound (const String &t) {
-    return morseToSound(textToMorse(t));
-}
-
-void addToBuzzer(String text) {
-    static String toProcess = "";
-    static String toBeap = "";
-    static unsigned long start = millis();
-
-    if (text != nullptr && text.length() > 0) {
-        text.toUpperCase();
-        toProcess += text;
-    }
-
-    if (toBeap.length() == 0 && toProcess.length() == 0) {
-        start = millis();
-    } else if (toBeap.length() == 0 && toProcess.length() > 0) {
-        String x = String(toProcess[0]);
-        receiveString += x;
-        toBeap = textToSound(x);
-        toProcess = toProcess.substring(1);
-    } else if (toBeap.length() > 0 && millis() - start > DOT_INTERVAL * MORSE_READ_RATE) {
-        toBeap = toBeap.substring(1);
-        start = millis();
-    }
-    if (toBeap.length() > 0 && toBeap[0] == 'b') {
-        if (ledOnReceive) {
-            digitalWrite(LED_PIN, HIGH);
-        }
-        if (buzzerOnReceive) {
-            buzzerBeap = true;
-        }
-    } else {
-        if (ledOnReceive) {
-            digitalWrite(LED_PIN, LOW);
-        }
-    }
-}
+bool ledOnReceive = true;
+bool buzzerOnReceive = true;
 
 void send(char x) {
-//    received(x);
+    received(x);
 //    static unsigned long start = millis();
 //    boolean confirmation = false;
 //
@@ -176,75 +125,54 @@ void send(char x) {
 //    }
 }
 void received (char x) {
-    if (x == ' ' || isValidLetter(x)) {
+    buzzerLed.add(x);
+//    if (x == ' ' || isValidMorseLetter(x)) {
 //        HC12.print("&");
-        addToBuzzer(String(x));
-    } else if (x == '-' && receiveString.length() > 0) {
+//        addToBuzzer(String(x));
+//    } else if (x == '-' && receiveString.length() > 0) {
 //        HC12.print("&");
-        receiveString = receiveString.substring(0, receiveString.length() - 1);
-    } else if (x == '_') {
+//        receiveString = receiveString.substring(0, receiveString.length() - 1);
+//    } else if (x == '_') {
 //        HC12.print("&");
-        receiveString = "";
-    }
+//        receiveString = "";
+//    }
 }
 
-void loopEditButton () {
-    static unsigned long start = millis();
-    static unsigned int count = 0;
-    static boolean lastButtonState = LOW;
-    auto buttonState = static_cast<boolean>(digitalRead(EDIT_PIN));
+void onEditButtonClick(){
+    Serial.write(":2\n");
+    noAddSpace = true;
+}
 
-    if (buttonState != lastButtonState) {
-        start = millis();
-        if (buttonState == HIGH) {
-            count++;
-            noAddSpace = true;
+void onEditButtonMultiClick (const int count) {
+    Serial.print(count);
+    Serial.write("\n");
+    if (count == 1 && morseString.length() > 0) {
+        if (lastSpace && morseString[morseString.length() - 1] == ' ') {
+            morseString = morseString.substring(0, morseString.length() - 2);
+            send('-');
+            send('-');
+            lastSpace = false;
+        } else {
+            morseString = morseString.substring(0, morseString.length() - 1);
+            send('-');
         }
-        lastButtonState = buttonState;
-    }
-    if (millis() - start > DOT_INTERVAL) {
-        if (count == 1 && morseString.length() > 0) {
-            if (lastSpace && morseString[morseString.length() - 1] == ' ') {
-                morseString = morseString.substring(0, morseString.length() - 2);
-                send('-');
-                send('-');
-                lastSpace = false;
-            } else {
-                morseString = morseString.substring(0, morseString.length() - 1);
-                send('-');
-            }
-        }
+    } else {
         if (count == 2) {
             morseString = "";
             morseCode = "";
+            buzzerLed.clear();
             send('_');
-        }
-        if (count == 3) {
+        } else if (count == 3) {
             receiveString = "";
         }
-        count = 0;
     }
 }
-void loopSettingButton () {
-    static boolean lastButtonState = LOW;
-    auto buttonState = static_cast<boolean>(digitalRead(SETTING_PIN));
 
-    if (buttonState != lastButtonState) {
-        if (buttonState == LOW) {
-            if (ledOnReceive && buzzerOnReceive) {
-                ledOnReceive = false;
-                buzzerOnReceive = true;
-            } else if (!ledOnReceive && buzzerOnReceive) {
-                ledOnReceive = true;
-                buzzerOnReceive = false;
-            } else {
-                ledOnReceive = true;
-                buzzerOnReceive = true;
-            }
-        }
-        lastButtonState = buttonState;
-    }
+void onSettingButtonClick () {
+    buzzerLed.setBuzzer(!buzzerLed.isBuzzer());
+    buzzerLed.setLed(buzzerLed.isBuzzer() ^ buzzerLed.isLed());
 }
+
 void loopMorseKey () {
     static unsigned long start = millis();
     static boolean lastButtonState = LOW;
@@ -269,7 +197,8 @@ void loopMorseKey () {
 
     if(buttonState == LOW){
         if(morseCode.length() > 0 && timeInterval > DASH_INTERVAL && timeInterval < WORD_INTERVAL) {
-            morseCode = morseToChar(morseCode);
+            morseString += morseToChar(morseCode);
+            morseCode = "";
             send(morseString[morseString.length() - 1]);
         } else if (morseString.length() > 0 && morseString[morseString.length() - 1] != ' ' && (!noAddSpace)
                    && timeInterval > WORD_INTERVAL && timeInterval < WORD_INTERVAL + DOT_INTERVAL) {
@@ -285,34 +214,6 @@ void loopLCD () {
     morseLCD.write(receiveString, false);
 }
 
-void loopBuzzer() {
-    addToBuzzer(nullptr);
-    if (buzzerBeap) {
-        tone(BUZZER_PIN, BUZZER_FREQ);
-    } else {
-        noTone(BUZZER_PIN);
-    }
-    buzzerBeap = false;
-}
-void loopHC12 () {
-    send('#');
-}
-
-void setup() {
-    pinMode(MORSE_KEY_PIN, INPUT);
-    pinMode(EDIT_PIN, INPUT);
-    pinMode(SETTING_PIN, INPUT);
-    pinMode(LED_PIN, OUTPUT);
-    pinMode(BUZZER_PIN, OUTPUT);
-
-    connection.begin();
-    morseLCD.begin();
-    Serial.print(textToMorse("Vivswan Shah."));
-    Serial.write('\n');
-    Serial.print(morseToChar("*"));
-    Serial.write('\n');
-}
-
 void setting() {
     if (morseString.length() > 14) {
         morseString = morseString.substring(1);
@@ -322,15 +223,34 @@ void setting() {
     }
 }
 
+void setup() {
+    morseKeyButton.begin();
+
+    editButton.begin();
+    editButton.setClick(onEditButtonClick);
+    editButton.setMultiClick(onEditButtonMultiClick, DOT_INTERVAL * 2);
+
+    settingButton.begin();
+    settingButton.setClick(onSettingButtonClick);
+
+    buzzerLed.begin();
+
+    connection.begin();
+    morseLCD.begin();
+}
+
 void loop() {
     connection.loop();
+
+    morseKeyButton.loop();
+    editButton.loop();
+    settingButton.loop();
+
+
     setting();
 
-
-    loopEditButton();
-    loopSettingButton();
     loopMorseKey();
     loopLCD();
-    loopBuzzer();
-    loopHC12();
+
+    buzzerLed.loop();
 }

@@ -15,7 +15,7 @@ class MorseLCD {
         LiquidCrystal lcd;
 
     public:
-        explicit MorseLCD(LiquidCrystal lcd): lcd(lcd){}
+        explicit MorseLCD(const LiquidCrystal &lcd): lcd(lcd){}
 
         void begin() {
             lcd.begin(LCD_ROWS, LCD_COLS);
@@ -24,7 +24,7 @@ class MorseLCD {
         }
 
         void write(const String &str, bool sender = true) {
-            lcd.setCursor(0, sender ? 0 : 1);
+            lcd.setCursor(0, static_cast<uint8_t>(sender ? 0 : 1));
             lcd.print(sender ? senderSym : recieverSym);
             lcd.print(':');
             if (str.length() > printLen) {

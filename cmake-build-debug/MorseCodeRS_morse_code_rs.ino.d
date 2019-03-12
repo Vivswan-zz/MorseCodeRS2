@@ -1,4 +1,6 @@
 MorseCodeRS_morse_code_rs.ino.o: \
+  /home/dekruptos/MyData/MorseCodeRS/src_cpp/button.h \
+  /home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_code.h \
   /home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_lcd.h \
   /home/dekruptos/MyData/MorseCodeRS/src_cpp/connection.h \
   /usr/share/arduino/libraries/LiquidCrystal/LiquidCrystal.h \
@@ -25,6 +27,6 @@ MorseCodeRS_morse_code_rs.ino.o: \
   /usr/lib/avr/include/math.h /usr/lib/avr/include/string.h \
   /usr/lib/avr/include/stdlib.h \
   /usr/share/arduino/hardware/arduino/cores/arduino/Arduino.h \
-  /clion_clangd_inmemory_directory/macros/home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_code.h \
+  /clion_clangd_inmemory_directory/macros/home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_buzzer_and_led.h \
   /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/MorseCodeRS_morse_code_rs.ino.cpp \
-  /home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_code.h
+  /home/dekruptos/MyData/MorseCodeRS/src_cpp/morse_buzzer_and_led.h

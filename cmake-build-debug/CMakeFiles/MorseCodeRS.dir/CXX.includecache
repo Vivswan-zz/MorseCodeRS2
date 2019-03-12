@@ -19,6 +19,10 @@ morse_lcd.h
 /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/morse_lcd.h
 morse_code.h
 /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/morse_code.h
+button.h
+/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/button.h
+morse_buzzer_and_led.h
+/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/morse_buzzer_and_led.h
 Arduino.h
 /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/Arduino.h
 

@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/dekruptos/MyData/MorseCodeRS/cmake-build-debug
 include CMakeFiles/MorseCodeRS-upload.dir/progress.make
 
 CMakeFiles/MorseCodeRS-upload: MorseCodeRS.elf
-	/usr/share/arduino/hardware/tools/avrdude -C/usr/share/arduino/hardware/tools/avrdude.conf -patmega328p -carduino -b115200 -P/dev/ttyACM0 -D -v -Uflash:w:/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/MorseCodeRS.hex:i -Ueeprom:w:/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/MorseCodeRS.eep:i
+	/usr/share/arduino/hardware/tools/avrdude -C/usr/share/arduino/hardware/tools/avrdude.conf -patmega328p -carduino -b115200 -P/dev/ttyACM1 -D -v -Uflash:w:/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/MorseCodeRS.hex:i -Ueeprom:w:/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/MorseCodeRS.eep:i
 
 MorseCodeRS-upload: CMakeFiles/MorseCodeRS-upload
 MorseCodeRS-upload: CMakeFiles/MorseCodeRS-upload.dir/build.make

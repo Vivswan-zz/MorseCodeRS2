@@ -174,9 +174,9 @@ clean: CMakeFiles/uno_LiquidCrystal.dir/clean
 # Target rules for target CMakeFiles/MorseCodeRS.dir
 
 # All Build rule for target.
+CMakeFiles/MorseCodeRS.dir/all: CMakeFiles/uno_SoftwareSerial.dir/all
 CMakeFiles/MorseCodeRS.dir/all: CMakeFiles/uno_LiquidCrystal.dir/all
 CMakeFiles/MorseCodeRS.dir/all: CMakeFiles/uno_CORE.dir/all
-CMakeFiles/MorseCodeRS.dir/all: CMakeFiles/uno_SoftwareSerial.dir/all
 	$(MAKE) -f CMakeFiles/MorseCodeRS.dir/build.make CMakeFiles/MorseCodeRS.dir/depend
 	$(MAKE) -f CMakeFiles/MorseCodeRS.dir/build.make CMakeFiles/MorseCodeRS.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dekruptos/MyData/MorseCodeRS/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target MorseCodeRS"
