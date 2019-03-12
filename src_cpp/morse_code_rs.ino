@@ -2,8 +2,6 @@
 #include <SoftwareSerial.h>
 #include <LiquidCrystal.h>
 
-
-
 #define DOT_INTERVAL    150
 #define BUZZER_FREQ     700
 #define BUZZER_INTERVAL 300
@@ -55,6 +53,8 @@ String receiveString = "";
 
 bool lastSpace = false;
 bool noAddSpace = false;
+
+bool settingButtonMode = false;
 
 void send(char x) {
     received(x);
@@ -108,7 +108,6 @@ void received (char x) {
 void onEditButtonClick(){
     noAddSpace = true;
 }
-
 void onEditButtonMultiClick (const int count) {
     if (count == 1 && morseString.length() > 0) {
         if (lastSpace && morseString[morseString.length() - 1] == ' ') {
@@ -132,9 +131,16 @@ void onEditButtonMultiClick (const int count) {
     }
 }
 
-void onSettingButtonClick () {
-    buzzerLed.setBuzzer(!buzzerLed.isBuzzer());
-    buzzerLed.setLed(buzzerLed.isBuzzer() ^ buzzerLed.isLed());
+void onSettingButtonMultiClick (const int count) {
+    if (count == 1) {
+        if (!settingButtonMode) {
+            connection.setChannel(connection.getChannel() < 'E' ? static_cast<char>(connection.getChannel() + 1) : 'A');
+        } else {
+            buzzerLed.setBuzzer(!buzzerLed.isBuzzer());
+            buzzerLed.setLed(buzzerLed.isBuzzer() ^ buzzerLed.isLed());
+        }
+    }
+    if (count == 2) settingButtonMode = !settingButtonMode;
 }
 
 void loopMorseKey () {
@@ -173,21 +179,18 @@ void loopMorseKey () {
     }
 }
 
-void loopLCD () {
+void LcdLoop() {
+    morseLCD.changeSYM(connection.isConnected() ? 'S' : 'X');
     morseLCD.write(morseString + morseCode);
     morseLCD.write(receiveString, false);
+    morseLCD.footer(connection.getChannel());
+    morseLCD.footer(static_cast<char>('0' + 1 + (buzzerLed.isLed() ? 0 : 2) + (buzzerLed.isBuzzer() ? 0 : 1)), false);
 }
 
-void setting() {
-    if (morseString.length() > 14) {
-        morseString = morseString.substring(1);
-    }
-    if (receiveString.length() > 14) {
-        receiveString = receiveString.substring(1);
-    }
-}
 
 void setup() {
+    randomSeed(analogRead(0));
+
     morseKeyButton.begin();
 
     editButton.begin();
@@ -195,7 +198,7 @@ void setup() {
     editButton.setMultiClick(onEditButtonMultiClick, DOT_INTERVAL * 2);
 
     settingButton.begin();
-    settingButton.setClick(onSettingButtonClick);
+    settingButton.setMultiClick(onSettingButtonMultiClick, DOT_INTERVAL * 2);
 
     buzzerLed.begin();
 
@@ -210,11 +213,15 @@ void loop() {
     editButton.loop();
     settingButton.loop();
 
-
-    setting();
-
     loopMorseKey();
-    loopLCD();
 
+    if (morseString.length() > 14) {
+        morseString = morseString.substring(1);
+    }
+    if (receiveString.length() > 14) {
+        receiveString = receiveString.substring(1);
+    }
+
+    LcdLoop();
     buzzerLed.loop();
 }

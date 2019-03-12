@@ -31,8 +31,8 @@ class ArduinoButton{
                 clickCount = 0;
             }
 
-            if (state == HIGH && lastState == LOW && click != nullptr) {
-                click();
+            if (state == HIGH && lastState == LOW) {
+                if (click != nullptr) click();
 
                 startClick = now;
                 clickCount++;

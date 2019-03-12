@@ -57,7 +57,9 @@ class BuzzerLED {
         }
         void checkSound () {
             if (millis() - start > BUZZER_INTERVAL) {
-                if (currentSound[0] != '\0') {
+                if (currentSound[0] == '\0') {
+                    beepCharCurrent = false;
+                } else {
                     int c = pop(currentSound);
                     beepCharCurrent = c == 'b';
                     start = millis();
@@ -97,8 +99,10 @@ class BuzzerLED {
         void loop () {
             if (currentSound[0] == '\0' && canPop()) toSound(pop());
             if (currentSound[0] != '\0') checkSound();
-            if (buzzer) beepAccordingly();
-            if (led) ledAccordingly();
+            if (!buzzer) willBeep = false;
+            if (!led) willLed = false;
+            beepAccordingly();
+            ledAccordingly();
         }
 
         bool isBuzzer () const {

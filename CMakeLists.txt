@@ -30,7 +30,7 @@ link_directories(${CMAKE_CURRENT_SOURCE_DIR}/)
 
 #### Additional settings for programmer. From programmers.txt
 # set(${PROJECT_NAME}_PROGRAMMER avrispmkii)
-set(${PROJECT_NAME}_PORT /dev/ttyACM1)
+set(${PROJECT_NAME}_PORT /dev/ttyACM0)
 # set(uno.upload.speed 9600)
 
 ## Verbose build process

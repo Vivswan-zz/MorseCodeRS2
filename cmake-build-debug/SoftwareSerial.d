@@ -1,5 +1,4 @@
 SoftwareSerial.o: \
-  /usr/share/arduino/libraries/SoftwareSerial/SoftwareSerial.h \
   /usr/share/arduino/hardware/arduino/variants/standard/pins_arduino.h \
   /usr/share/arduino/hardware/arduino/cores/arduino/new.h \
   /usr/share/arduino/hardware/arduino/cores/arduino/Printable.h \
@@ -22,5 +21,6 @@ SoftwareSerial.o: \
   /usr/lib/gcc/avr/5.4.0/include/stdint.h \
   /usr/lib/avr/include/inttypes.h /usr/lib/avr/include/avr/sfr_defs.h \
   /usr/lib/avr/include/avr/io.h /usr/lib/avr/include/avr/interrupt.h \
-  /clion_clangd_inmemory_directory/macros/usr/share/arduino/libraries/SoftwareSerial/SoftwareSerial.cpp \
-  /usr/share/arduino/libraries/SoftwareSerial/SoftwareSerial.cpp
+  /clion_clangd_inmemory_directory/macros/usr/share/arduino/libraries/SoftwareSerial/SoftwareSerial.h \
+  /usr/share/arduino/libraries/SoftwareSerial/SoftwareSerial.cpp \
+  /usr/share/arduino/libraries/SoftwareSerial/SoftwareSerial.h

@@ -10,7 +10,7 @@ class MorseLCD {
     private:
         char senderSym = 'S';
         char receiverSym = 'R';
-        unsigned short printLen = LCD_COLS - 2;
+        unsigned short printLen = LCD_COLS - 4;
 
         LiquidCrystal lcd;
 
@@ -35,6 +35,13 @@ class MorseLCD {
                     lcd.print(" ");
                 }
             }
+        }
+
+
+        void footer (char c, bool sender = true) {
+            lcd.setCursor(static_cast<uint8_t>(LCD_COLS - 2), static_cast<uint8_t>(sender ? 0 : 1));
+            lcd.print(':');
+            lcd.print(c);
         }
 
         void changeSYM(char sym, bool sender = true) {
