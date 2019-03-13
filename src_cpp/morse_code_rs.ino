@@ -60,8 +60,8 @@ void send(char x) {
     connection.write(x);
 }
 void received (char* x) {
-    Serial.println(x);
     buzzerLed.add(x);
+    receiveString = receiveString + x;
 }
 
 void onEditButtonClick(){
