@@ -1,2 +1,0 @@
-/usr/bin/avr-ar qc libuno_LiquidCrystal.a  CMakeFiles/uno_LiquidCrystal.dir/usr/share/arduino/libraries/LiquidCrystal/LiquidCrystal.cpp.obj
-/usr/bin/avr-ranlib libuno_LiquidCrystal.a
