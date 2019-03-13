@@ -31,7 +31,7 @@ class MorseLCD {
                 lcd.print(str.substring(str.length() - printLen, str.length()));
             } else {
                 lcd.print(str);
-                for (int i = 0; i < printLen - str.length(); ++i) {
+                for (int i = 0; i < printLen; ++i) {
                     lcd.print(" ");
                 }
             }
