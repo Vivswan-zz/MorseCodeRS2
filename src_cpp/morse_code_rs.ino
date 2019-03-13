@@ -54,14 +54,23 @@ String receiveString = "";
 bool lastSpace = false;
 bool noAddSpace = false;
 
-bool settingButtonMode = false;
-
 void send(char x) {
     connection.write(x);
 }
+void received (char x) {
+    if (x == ' ' || isValidMorseLetter(x)) {
+        buzzerLed.add(x);
+        receiveString = receiveString + x;
+    } else if (x == '-' && receiveString.length() > 0) {
+        receiveString = receiveString.substring(0, receiveString.length() - 1);
+    } else if (x == '_') {
+        receiveString = "";
+    }
+}
 void received (char* x) {
-    buzzerLed.add(x);
-    receiveString = receiveString + x;
+    for (int i = 0; i < strlen(x); ++i) {
+        received(x[i]);
+    }
 }
 
 void onEditButtonClick(){
@@ -91,6 +100,7 @@ void onEditButtonMultiClick (const int count) {
 }
 
 void onSettingButtonMultiClick (const int count) {
+    static bool settingButtonMode = false;
     if (count == 1) {
         if (!settingButtonMode) {
             connection.setChannel(connection.getChannel() < 'E' ? static_cast<char>(connection.getChannel() + 1) : 'A');
@@ -137,7 +147,6 @@ void loopMorseKey () {
         }
     }
 }
-
 void LcdLoop() {
 //    morseLCD.changeSYM(connection.getID());
 //    morseLCD.changeSYM(connection.getRecvID() == '\0' ? 'R' : connection.getRecvID());
@@ -146,7 +155,6 @@ void LcdLoop() {
     morseLCD.footer(connection.getChannel());
     morseLCD.footer(static_cast<char>('0' + 1 + (buzzerLed.isLed() ? 0 : 2) + (buzzerLed.isBuzzer() ? 0 : 1)), false);
 }
-
 
 void setup() {
     randomSeed(static_cast<unsigned int>(analogRead(0) + analogRead(1) + analogRead(2) + analogRead(3) + analogRead(4) + analogRead(5)));
@@ -166,8 +174,13 @@ void setup() {
     morseLCD.begin();
 
 }
-
 void loop() {
+//    static unsigned long start = millis();
+//    if (millis() - start > 1000) {
+//        send('A');
+//        start = millis();
+//    }
+
     connection.loop();
 
     morseKeyButton.loop();
