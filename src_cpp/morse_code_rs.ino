@@ -57,6 +57,7 @@ bool noAddSpace = false;
 bool settingButtonMode = false;
 
 void send(char x) {
+    connection.write(x);
     received(x);
 //    static unsigned long start = millis();
 //    boolean confirmation = false;
@@ -180,7 +181,8 @@ void loopMorseKey () {
 }
 
 void LcdLoop() {
-    morseLCD.changeSYM(connection.isConnected() ? 'S' : 'X');
+    morseLCD.changeSYM(connection.getID());
+    morseLCD.changeSYM(connection.getRecvID() == '\0' ? 'R' : connection.getRecvID());
     morseLCD.write(morseString + morseCode);
     morseLCD.write(receiveString, false);
     morseLCD.footer(connection.getChannel());
@@ -189,7 +191,7 @@ void LcdLoop() {
 
 
 void setup() {
-    randomSeed(analogRead(0));
+    randomSeed(static_cast<unsigned int>(analogRead(0)));
 
     morseKeyButton.begin();
 
