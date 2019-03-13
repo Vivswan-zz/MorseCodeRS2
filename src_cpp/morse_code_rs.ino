@@ -57,52 +57,11 @@ bool noAddSpace = false;
 bool settingButtonMode = false;
 
 void send(char x) {
-    received(x);
-//    static unsigned long start = millis();
-//    boolean confirmation = false;
-//
-//    start = millis();
-//    if (x != '#') {
-//        HC12.print(String(x));
-//    } else {
-//        confirmation = true;
-//    }
-//    int count = 0;
-//    while (HC12.available() || !confirmation) {
-//        char incomingByte = HC12.read();
-//        delay(5);
-//        if(!confirmation && incomingByte == '&') {
-//            morseLCD.changeSYM('S');
-//            confirmation = true;
-//        } else {
-//            received(incomingByte);
-//        }
-//        if (count >= 5) {
-//            start = millis();
-//            confirmation = true;
-//            morseString = morseString.substring(0, morseString.length() - 1);
-//            morseLCD.changeSYM('X');
-//        }
-//        if (millis() - start > DOT_INTERVAL && !confirmation) {
-//            HC12.print(String(x));
-//            start = millis();
-//
-//            count++;
-//        }
-//    }
+    connection.write(x);
 }
-void received (char x) {
+void received (char* x) {
+    Serial.println(x);
     buzzerLed.add(x);
-//    if (x == ' ' || isValidMorseLetter(x)) {
-//        HC12.print("&");
-//        addToBuzzer(String(x));
-//    } else if (x == '-' && receiveString.length() > 0) {
-//        HC12.print("&");
-//        receiveString = receiveString.substring(0, receiveString.length() - 1);
-//    } else if (x == '_') {
-//        HC12.print("&");
-//        receiveString = "";
-//    }
 }
 
 void onEditButtonClick(){
@@ -180,7 +139,8 @@ void loopMorseKey () {
 }
 
 void LcdLoop() {
-    morseLCD.changeSYM(connection.isConnected() ? 'S' : 'X');
+//    morseLCD.changeSYM(connection.getID());
+//    morseLCD.changeSYM(connection.getRecvID() == '\0' ? 'R' : connection.getRecvID());
     morseLCD.write(morseString + morseCode);
     morseLCD.write(receiveString, false);
     morseLCD.footer(connection.getChannel());
@@ -189,8 +149,7 @@ void LcdLoop() {
 
 
 void setup() {
-    randomSeed(analogRead(0));
-
+    randomSeed(static_cast<unsigned int>(analogRead(0) + analogRead(1) + analogRead(2) + analogRead(3) + analogRead(4) + analogRead(5)));
     morseKeyButton.begin();
 
     editButton.begin();
@@ -203,7 +162,9 @@ void setup() {
     buzzerLed.begin();
 
     connection.begin();
+    connection.onReceive(received);
     morseLCD.begin();
+
 }
 
 void loop() {
