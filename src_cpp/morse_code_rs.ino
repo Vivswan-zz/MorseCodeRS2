@@ -38,7 +38,8 @@
 #include "button.h"
 #include "morse_buzzer_and_led.h"
 
-Connection connection(SoftwareSerial(HC_RX, HC_TX));
+SoftwareSerial HC12(HC_TX, HC_RX);
+Connection connection(HC12);
 MorseLCD morseLCD(LiquidCrystal(RS, EN, D4, D5, D6, D7));
 
 ArduinoButton morseKeyButton(MORSE_KEY_PIN);

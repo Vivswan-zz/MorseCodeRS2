@@ -100,13 +100,13 @@ class Connection {
         }
 
         char getID() const {
-            return serialConnect->id;
+            return HC12Connect->id;
         }
         char getRecvID() const {
             return HC12Connect->id;
         }
         char getChannel() const {
-            return serialConnect->channel;
+            return HC12Connect->channel;
         }
         void setChannel(char channel) {
             serialConnect->channel = channel;
